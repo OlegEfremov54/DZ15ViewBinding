@@ -2,4 +2,8 @@
     <string name="app_name">DZ15ViewBinding</string>
     <string name="infoStr">Информация о приложении</string>
     <string name="exit">Выход из приложения</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="project_title">Название проекта</string>
+    <string name="project_description">Описание проекта</string>
 </resources>

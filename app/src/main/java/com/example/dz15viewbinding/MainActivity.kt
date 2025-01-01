@@ -9,19 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.dz15viewbinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var toolbarMain: Toolbar
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, RecyclerViewFragment(), "RecyclerView")
+            .commit()
 //Тулбар
         toolbarMain = findViewById(R.id.toolbarMain)
         setSupportActionBar(toolbarMain)
@@ -29,6 +29,16 @@ class MainActivity : AppCompatActivity() {
         toolbarMain.subtitle = " Версия 1. Главная страница"
         toolbarMain.setLogo(R.drawable.diplomamini)
 
+    }
+    override fun onBackPressed() {
+        val backStackCount = supportFragmentManager.backStackEntryCount
+        if (backStackCount > 0) {
+            val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            if (currentFragment is ClickableCard) {
+                currentFragment.onBackPressed()
+            }
+        }
+        else super.onBackPressed()
     }
 
     //Инициализация Меню
