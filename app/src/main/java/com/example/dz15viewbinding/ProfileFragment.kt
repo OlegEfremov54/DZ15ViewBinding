@@ -25,7 +25,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile), ClickableCard {
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     binding.profileNameTv.text = "Олег Ефремов"
-    binding.profileAboutTv.text = "Чтение книг, коллекционирование, програмирование, созерцание мира и вселеной"
+    binding.profileAboutTv.text = "Чтение книг, коллекционирование, програмирование, созерцание мира и вселенной"
     binding.profileImageIv.setImageResource(R.drawable.flaffi)
 
 }
