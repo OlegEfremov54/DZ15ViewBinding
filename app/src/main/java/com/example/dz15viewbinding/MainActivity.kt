@@ -28,8 +28,11 @@ class MainActivity : AppCompatActivity() {
         title = "  Дизайнерский Dashboard"
         toolbarMain.subtitle = " Версия 1. Главная страница"
         toolbarMain.setLogo(R.drawable.diplomamini)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        toolbarMain.setNavigationOnClickListener { onBackPressed() }
 
     }
+    //Обработка кнопки Возврат в Тулбаре
     override fun onBackPressed() {
         val backStackCount = supportFragmentManager.backStackEntryCount
         if (backStackCount > 0) {

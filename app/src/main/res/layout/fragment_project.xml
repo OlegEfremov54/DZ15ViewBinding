@@ -18,7 +18,7 @@
             android:gravity="center"
             android:layout_margin="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:text="Здесь название проекта"
+            android:text="@string/prod_name"
             android:textStyle="bold"/>
 
         <TextView
@@ -28,7 +28,7 @@
             android:gravity="start"
             android:layout_margin="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="Здесь описание проекта, которое мы вставляем через код" />
+            android:text="@string/Prod_info" />
 
         <ImageView
             android:layout_width="match_parent"

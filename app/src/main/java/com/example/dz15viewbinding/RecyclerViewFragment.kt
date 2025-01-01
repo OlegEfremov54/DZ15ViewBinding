@@ -30,12 +30,12 @@ class RecyclerViewFragment : Fragment(R.layout.fragment_recycler_view) {
 
     override fun onResume() {
         super.onResume()
-        Log.d("AAA", "onResume: recycler view fragment ")
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("AAA", "onCreate: recycler view fragment")
+
     }
 
 }
