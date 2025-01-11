@@ -24,19 +24,21 @@ class ProfileFragment : Fragment(R.layout.fragment_profile), ClickableCard {
     }
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    //Кратко о себе
     binding.profileNameTv.text = "Олег Ефремов"
     binding.profileAboutTv.text = "Чтение книг, коллекционирование, програмирование, созерцание мира и вселенной"
+    //Фото  автора
     binding.profileImageIv.setImageResource(R.drawable.flaffi)
 
 }
-
+// Переписали функцию Интерфейса. Может зря так подробно?
 override fun onClick(fragmentManager: FragmentManager) {
     fragmentManager.beginTransaction()
         .replace(R.id.fragment_container, this)
         .addToBackStack("Тут надо что то написать?")
         .commit()
 }
-
+// Возврат на главное Активити
 override fun onBackPressed() {
     val mainFragment = parentFragmentManager.findFragmentByTag("RecyclerView")!!
     parentFragmentManager.beginTransaction()

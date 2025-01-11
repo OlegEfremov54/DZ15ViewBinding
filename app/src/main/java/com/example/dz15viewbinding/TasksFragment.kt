@@ -26,6 +26,7 @@ class TasksFragment : Fragment(R.layout.fragment_tasks), ClickableCard {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Адаптер и наполнение письмами
         binding.tasksRv.adapter = TasksRecyclerViewAdapter(Task.tasks)
         binding.tasksRv.layoutManager = LinearLayoutManager(requireContext())
     }
@@ -36,7 +37,7 @@ class TasksFragment : Fragment(R.layout.fragment_tasks), ClickableCard {
             .addToBackStack("")
             .commit()
     }
-
+    //Возврат
     override fun onBackPressed() {
         val mainFragment = parentFragmentManager.findFragmentByTag("RecyclerView")!!
         parentFragmentManager.beginTransaction()

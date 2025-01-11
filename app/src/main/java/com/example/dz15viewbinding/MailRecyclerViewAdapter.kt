@@ -21,18 +21,25 @@ class MailRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val mail = mailList[position]
-        holder.holderBinding.mailTitleTv.text = mail.title
-        holder.holderBinding.mailBodyTv.text = mail.body
-        holder.holderBinding.mailDateTv.text = mail.date
+        if (position < mailList.size) {
+            val mail = mailList[position]
+            //Тема письма
+            holder.holderBinding.mailTitleTv.text = mail.title
+            //Тело письма
+            holder.holderBinding.mailBodyTv.text = mail.body
+            //Дата письма
+            holder.holderBinding.mailDateTv.text = mail.date
 
-        holder.itemView.setOnLongClickListener {
-            mailList.removeAt(position)
-            notifyItemRemoved(position)
-            true
+            //Удаление из списка при длинном нажатие
+            holder.itemView.setOnLongClickListener {
+                mailList.removeAt(position)
+                notifyItemRemoved(position)
+                notifyItemRangeChanged(position, mailList.size)
+                true
+            }
         }
     }
-
+    // Размер списка Писем
     override fun getItemCount(): Int = mailList.size
 
     inner class ViewHolder(binding: MailItemBinding) : RecyclerView.ViewHolder(binding.root) {

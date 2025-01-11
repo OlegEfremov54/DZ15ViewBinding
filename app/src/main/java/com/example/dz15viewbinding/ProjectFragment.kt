@@ -24,8 +24,11 @@ class ProjectFragment : Fragment(R.layout.fragment_project), ClickableCard {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //Диаграима Ганта
         binding.projectChartIv.setImageResource(R.drawable.gantdiagram)
+        //Название проекта
         binding.projectTitleTv.text = getString(R.string.project_title)
+        //описание
         binding.projectDescriptionTv.text = getString(R.string.project_description)
     }
 
@@ -35,7 +38,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project), ClickableCard {
             .replace(R.id.fragment_container, this)
             .commit()
     }
-
+//Возврат на основное активити
     override fun onBackPressed() {
         val mainFragment = parentFragmentManager.findFragmentByTag("RecyclerView")!!
         parentFragmentManager.beginTransaction()

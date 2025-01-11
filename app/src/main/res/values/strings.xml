@@ -5,11 +5,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="project_title">Как завоевать мир</string>
-    <string name="project_description">1. Посадить дерево.
-        2. Построить дом.
-        3. Вырастить сына.
-        4. Или что то такое и в ином порядке...
+    <string name="project_description">1. Посадить дерево. \n
+        2. Построить дом. \n
+        3. Вырастить сына. \n
+        4. Или что то такое и в ином порядке... \n
+        Что еще?
     </string>
-    <string name="prod_name">Здесь название проекта</string>
-    <string name="Prod_info">Здесь описание проекта, которое мы вставляем через код</string>
+    <string name="prod_name">Проект</string>
+    <string name="Prod_info">Описание</string>
 </resources>
